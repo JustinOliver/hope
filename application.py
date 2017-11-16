@@ -45,7 +45,7 @@ GPIO.output(22, GPIO.HIGH)
 
 # define functions to execute when button is pressed, and clearing when done
 
-@app.route("/redLed/", methods=['POST'])
+@app.route("/redLed/")
 def redLed():
     GPIO.output(red, GPIO.HIGH)
     time.sleep(5)
