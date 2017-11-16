@@ -8,8 +8,8 @@ import time
 
 app = Flask(__name__)
 
-def main():
-    GPIO.setmode(GPIO.BCM)
+
+GPIO.setmode(GPIO.BCM)
 
 # pin locations on breadboard according to BCM numbering
 red = 17
