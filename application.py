@@ -8,7 +8,8 @@ import time
 
 app = Flask(__name__)
 
-GPIO.setmode(GPIO.BCM)
+def main():
+    GPIO.setmode(GPIO.BCM)
 
 # pin locations on breadboard according to BCM numbering
 red = 17
@@ -69,4 +70,5 @@ def index():
 
 
 # setup pi as webserver
-app.run(host='0.0.0.0', port=80, debug=True)
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=80, debug=True)
