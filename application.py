@@ -79,7 +79,6 @@ def main():
         GPIO.cleanup()
         return render_template("index.html")
 
-
     # this is what will show up on the index page
     @app.route("/")
     def index():
@@ -89,3 +88,4 @@ def main():
 # setup pi as webserver
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=80, debug=True)
+    main()
