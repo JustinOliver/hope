@@ -45,43 +45,45 @@ GPIO.output(22, GPIO.HIGH)
 
 # define functions to execute when button is pressed, and clearing when done
 
-@app.route("/redLed/", methods=['POST' 'GET'])
-def redLed():
-    GPIO.output(red, GPIO.HIGH)
-    time.sleep(5)
-    GPIO.output(red, GPIO.LOW)
-    GPIO.cleanup()
-    return render_template("index.html")
+def main():
 
-@app.route("/yellowLed/", methods=['POST'])
-def yellowLed():
-    GPIO.output(yellow, GPIO.HIGH)
-    time.sleep(5)
-    GPIO.output(yellow, GPIO.LOW)
-    GPIO.cleanup()
-    return render_template("index.html")
+    @app.route("/redLed/", methods=['POST' 'GET'])
+    def redLed():
+        GPIO.output(red, GPIO.HIGH)
+        time.sleep(5)
+        GPIO.output(red, GPIO.LOW)
+        GPIO.cleanup()
+        return render_template("index.html")
 
-@app.route("/greenLed/", methods=['POST'])
-def greenLed():
-    GPIO.output(green, GPIO.HIGH)
-    time.sleep(5)
-    GPIO.output(green, GPIO.LOW)
-    GPIO.cleanup()
-    return render_template("index.html")
+    @app.route("/yellowLed/", methods=['POST'])
+    def yellowLed():
+        GPIO.output(yellow, GPIO.HIGH)
+        time.sleep(5)
+        GPIO.output(yellow, GPIO.LOW)
+        GPIO.cleanup()
+        return render_template("index.html")
 
-@app.route("/buz/", methods=['POST'])
-def buz():
-    GPIO.output(buzz, GPIO.LOW)
-    time.sleep(1)
-    GPIO.output(buzz, GPIO.HIGH)
-    GPIO.cleanup()
-    return render_template("index.html")
+    @app.route("/greenLed/", methods=['POST'])
+    def greenLed():
+        GPIO.output(green, GPIO.HIGH)
+        time.sleep(5)
+        GPIO.output(green, GPIO.LOW)
+        GPIO.cleanup()
+        return render_template("index.html")
+
+    @app.route("/buz/", methods=['POST'])
+    def buz():
+        GPIO.output(buzz, GPIO.LOW)
+        time.sleep(1)
+        GPIO.output(buzz, GPIO.HIGH)
+        GPIO.cleanup()
+        return render_template("index.html")
 
 
-# this is what will show up on the index page
-@app.route("/")
-def index():
-    return render_template("index.html")
+    # this is what will show up on the index page
+    @app.route("/")
+    def index():
+        return render_template("index.html")
 
 
 # setup pi as webserver
