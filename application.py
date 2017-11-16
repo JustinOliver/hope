@@ -22,11 +22,11 @@ pins = [red, yellow, green, buzz]
 # buzzer runs when GPIO is low, so set to high as defualt, set red to high as defualt for testing, change when funcitoning
 for pin in pins:
     if pin == 2 or pin == 3:
-        GPIO.setup(pin, GPIO.OUT)
-        GPIO.output(pin, GPIO.LOW)
+        GPIO.setup(pins[pin], GPIO.OUT)
+        GPIO.output(pins[pin], GPIO.LOW)
     else:
-        GPIO.setup(pin, GPIO.OUT)
-        GPIO.output(pin, GPIO.HIGH)
+        GPIO.setup(pins[pin], GPIO.OUT)
+        GPIO.output(pins[pin], GPIO.HIGH)
 
 # define functions to execute when button is pressed, and clearing when done
 
