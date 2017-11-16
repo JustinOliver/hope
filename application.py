@@ -49,17 +49,17 @@ def main():
 
     @app.route("/redLed/", methods=['POST' 'GET'])
     def redLed():
-        GPIO.output(red, GPIO.HIGH)
+        GPIO.output("red", GPIO.HIGH)
         time.sleep(5)
-        GPIO.output(red, GPIO.LOW)
+        GPIO.output("red", GPIO.LOW)
         GPIO.cleanup()
         return render_template("index.html")
 
     @app.route("/yellowLed/", methods=['POST'])
     def yellowLed():
-        GPIO.output(yellow, GPIO.HIGH)
+        GPIO.output("yellow", GPIO.HIGH)
         time.sleep(5)
-        GPIO.output(yellow, GPIO.LOW)
+        GPIO.output("yellow", GPIO.LOW)
         GPIO.cleanup()
         return render_template("index.html")
 
