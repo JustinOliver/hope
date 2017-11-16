@@ -17,16 +17,30 @@ yellow = 18
 green = 27
 buzz = 22
 
-pins = [red, yellow, green, buzz]
+GPIO.setup(17, GPIO.OUT)
+GPIO.output(17, GPIO.LOW)
+
+GPIO.setup(18, GPIO.OUT)
+GPIO.output(18, GPIO.LOW)
+
+GPIO.setup(27, GPIO.OUT)
+GPIO.output(27, GPIO.LOW)
+
+GPIO.setup(22, GPIO.OUT)
+GPIO.output(22, GPIO.HIGH)
+
+# todo below..... clean up code
+
+#pins = [red, yellow, green, buzz]
 
 # buzzer runs when GPIO is low, so set to high as defualt, set red to high as defualt for testing, change when funcitoning
-for pin in pins:
-    if pin == 2 or pin == 3:
-        GPIO.setup(pins[pin - 1], GPIO.OUT)
-        GPIO.output(pins[pin - 1], GPIO.LOW)
-    else:
-        GPIO.setup(pins[pin - 1], GPIO.OUT)
-        GPIO.output(pins[pin - 1], GPIO.HIGH)
+#for pin in pins:
+    #if pin == 2 or pin == 3:
+        #GPIO.setup(pins[pin - 1], GPIO.OUT)
+        #GPIO.output(pins[pin - 1], GPIO.LOW)
+    #else:
+        #GPIO.setup(pins[pin - 1], GPIO.OUT)
+        #GPIO.output(pins[pin - 1], GPIO.HIGH)
 
 # define functions to execute when button is pressed, and clearing when done
 
