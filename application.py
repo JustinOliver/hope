@@ -10,6 +10,7 @@ app = Flask(__name__)
 
 
 GPIO.setmode(GPIO.BCM)
+GPIO.setwarnings(False)
 
 # pin locations on breadboard according to BCM numbering
 red = 17
