@@ -7,7 +7,6 @@ import RPi.GPIO as GPIO
 import time
 
 app = Flask(__name__)
-app.secret_key = "test"
 
 
 GPIO.setmode(GPIO.BCM)
@@ -48,7 +47,7 @@ GPIO.output(22, GPIO.HIGH)
 
 def main():
 
-    @app.route("/redLed/", methods=['POST', 'GET'])
+    @app.route("/redLed/", methods=['POST'])
     def redLed():
         GPIO.output(red, GPIO.HIGH)
         time.sleep(5)
@@ -60,7 +59,7 @@ def main():
         GPIO.output(yellow, GPIO.HIGH)
         time.sleep(5)
         GPIO.output(yellow, GPIO.LOW)
-        return render_template("index.html")
+        return url_for("index.html")
 
     @app.route("/greenLed/", methods=['POST'])
     def greenLed():
@@ -77,7 +76,7 @@ def main():
         return render_template("index.html")
 
     # this is what will show up on the index page
-    @app.route("/")
+    @app.route("/", methods=['GET', 'POST'])
     def index():
         return render_template("index.html")
 
