@@ -7,6 +7,7 @@ import RPi.GPIO as GPIO
 import time
 
 app = Flask(__name__)
+app.secret_key = "test"
 
 
 GPIO.setmode(GPIO.BCM)
