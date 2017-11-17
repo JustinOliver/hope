@@ -2,7 +2,7 @@
 # output will light up one of 3 LEDs and a buzzer
 # basically just a toy to help me create a project utilizing the skills that I have enjoyed learning to this point (November, 2017)
 
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, redirect
 import RPi.GPIO as GPIO
 import time
 
@@ -59,7 +59,7 @@ def main():
         GPIO.output(yellow, GPIO.HIGH)
         time.sleep(5)
         GPIO.output(yellow, GPIO.LOW)
-        return url_for("index")
+        return redirect(url_for("index"))
 
     @app.route("/greenLed/", methods=['POST'])
     def greenLed():
