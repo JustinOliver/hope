@@ -47,7 +47,7 @@ GPIO.output(22, GPIO.HIGH)
 
 def main():
 
-    @app.route("/redLed/", methods=['POST' 'GET'])
+    @app.route("/redLed/", methods=['POST'])
     def redLed():
         GPIO.output(17, GPIO.HIGH)
         time.sleep(5)
