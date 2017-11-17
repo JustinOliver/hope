@@ -76,7 +76,7 @@ def main():
         return render_template("index.html")
 
     # this is what will show up on the index page
-    @app.route("/", methods=['POST', 'GET'])
+    @app.route("/")
     def index():
         return render_template("index.html")
 

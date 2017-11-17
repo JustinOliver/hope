@@ -15,14 +15,23 @@
             <p>Please don't press the buzzer, that sound is A-NOY-ING!</p>
         </div>
         <div>
-            <button class="button buttonred" onclick="/redLed/">Red Light</button>
-            <button class="button buttonyellow" onclick="/yellowLed/">Yellow Light</button>
-            <button class="button buttongreen" onclick="/greenLed/">Green Light</button>
-            <button class="button buttonbuzzer" onclick="/buz/">Buzzer</button>
+            <form action="/redLed/" method="POST">
+            <button class="button buttonred" type="submit">Red Light</button>
+            </form>
         </div>
         <div>
-            <form action="/redLed/" method="POST">
-            <button class="button buttonred" type="submit">Forward</button>
+            <form action="/yellowLed/" method="POST">
+            <button class="button buttonyellow" type="submit">Yellow Light</button>
+            </form>
+        </div>
+        <div>
+            <form action="/greenLed/" method="POST">
+            <button class="button buttongreen" type="submit">Green Light</button>
+            </form>
+        </div>
+        <div>
+            <form action="/buz/" method="POST">
+            <button class="button buttonbuzzer" type="submit">Buzzzzzzzerrrrr</button>
             </form>
         </div>
     </body>
