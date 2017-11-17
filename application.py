@@ -52,7 +52,6 @@ def main():
         GPIO.output(17, GPIO.HIGH)
         time.sleep(5)
         GPIO.output(17, GPIO.LOW)
-        GPIO.cleanup()
         return render_template("index.html")
 
     @app.route("/yellowLed/", methods=['POST'])
