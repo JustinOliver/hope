@@ -59,7 +59,7 @@ def main():
         GPIO.output(yellow, GPIO.HIGH)
         time.sleep(5)
         GPIO.output(yellow, GPIO.LOW)
-        return url_for("index.html")
+        return url_for("index")
 
     @app.route("/greenLed/", methods=['POST'])
     def greenLed():
