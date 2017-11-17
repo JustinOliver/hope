@@ -52,7 +52,7 @@ def main():
         GPIO.output(red, GPIO.HIGH)
         time.sleep(5)
         GPIO.output(red, GPIO.LOW)
-        return render_template("index.html")
+        return redirect(url_for("index.html"))
 
     @app.route("/yellowLed/", methods=['POST'])
     def yellowLed():
@@ -66,17 +66,17 @@ def main():
         GPIO.output(green, GPIO.HIGH)
         time.sleep(5)
         GPIO.output(green, GPIO.LOW)
-        return render_template("index.html")
+        return redirect(url_for("index.html"))
 
     @app.route("/buz/", methods=['POST'])
     def buz():
         GPIO.output(buzz, GPIO.LOW)
         time.sleep(1)
         GPIO.output(buzz, GPIO.HIGH)
-        return render_template("index.html")
+        return redirect(url_for("index.html"))
 
     # this is what will show up on the index page
-    @app.route("/", methods=['GET', 'POST'])
+    @app.route("/")
     def index():
         return render_template("index.html")
 
