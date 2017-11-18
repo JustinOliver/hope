@@ -36,13 +36,13 @@ GPIO.output(22, GPIO.HIGH)
 pins = [red, yellow, green, buzz]
 
 # Buzzer runs when GPIO is low, so set to high (off) as defualt. Set all
-for pin in pins:
-    if pins[pin - 1] == buzz:
-        GPIO.setup(pins[pin - 1], GPIO.OUT)
-        GPIO.output(pins[pin - 1], GPIO.LOW)
+for i in range(pins -1):
+    if pins[i] == buzz:
+        GPIO.setup(pins[i], GPIO.OUT)
+        GPIO.output(pins[i], GPIO.LOW)
     else:
-        GPIO.setup(pins[pin - 1], GPIO.OUT)
-        GPIO.output(pins[pin - 1], GPIO.HIGH)
+        GPIO.setup(pins[i], GPIO.OUT)
+        GPIO.output(pins[i], GPIO.HIGH)
 
 def ledLight(color):
     GPIO.output(color, GPIO.HIGH)
