@@ -37,7 +37,7 @@ pins = [red, yellow, green, buzz]
 
 # Buzzer runs when GPIO is low, so set to high (off) as defualt. Set all
 for pin in pins:
-    if pins[pin] == buzz:
+    if pins[pin - 1] == buzz:
         GPIO.setup(pins[pin - 1], GPIO.OUT)
         GPIO.output(pins[pin - 1], GPIO.LOW)
     else:
